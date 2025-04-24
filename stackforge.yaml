@@ -3,7 +3,7 @@ env: staging
 region: us-east-1
 
 github:
-  owner: github.com/KalebHawkins
+  owner: KalebHawkins
   repo: demo-repo
   branch: main
 
