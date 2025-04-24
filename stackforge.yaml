@@ -1,0 +1,29 @@
+namePrefix: user-platform
+env: staging
+region: us-east-1
+
+github:
+  owner: github.com/KalebHawkins
+  repo: demo-repo
+  branch: main
+
+services:
+  lambda:
+    - name: processUsers
+      runtime: python3.11
+      handler: handler.lambda_handler
+      memory: 256
+      timeout: 10
+      environment:
+        STAGE: staging
+
+    - name: notifyAdmins
+      runtime: python3.9
+      handler: handler.lambda_handler
+      memory: 128
+      timeout: 5
+
+tags:
+  Project: user-platform
+  AppOwner: platform-team
+  Environment: staging

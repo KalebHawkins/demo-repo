@@ -1,0 +1,14 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      golang: 1.22
+      nodejs: 18
+    commands:
+      - npm install -g aws-cdk
+      - go mod tidy
+  build:
+    commands:
+      - go run cdk-app/main.go synth
+      - cdk deploy --require-approval never
