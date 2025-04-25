@@ -6,9 +6,16 @@ phases:
       golang: 1.22
       nodejs: 18
     commands:
+      - echo "Installing CDK CLI..."
       - npm install -g aws-cdk
-      - go mod tidy
+
   build:
     commands:
-      - go run cdk-app/main.go synth
-      - cdk deploy --require-approval never
+      - echo "🔁 Moving into cdk-app directory"
+      - cd cdk-app
+      - echo "🧹 Tidy up Go modules"
+      - go mod tidy
+      - echo "📦 Synthesizing CDK app"
+      - go run main.go synth
+      - echo "🚀 Deploying CDK stack"
+      - cdk deploy --require-approval never --app "go run ."
