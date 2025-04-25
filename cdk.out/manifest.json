@@ -1,0 +1,190 @@
+{
+  "version": "41.0.0",
+  "artifacts": {
+    "user-platform-pipeline.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "user-platform-pipeline.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "user-platform-pipeline": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://837672867422/us-east-1",
+      "properties": {
+        "templateFile": "user-platform-pipeline.template.json",
+        "terminationProtection": false,
+        "tags": {
+          "AppOwner": "platform-team",
+          "Environment": "staging",
+          "Project": "user-platform"
+        },
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::837672867422:role/cdk-hnb659fds-deploy-role-837672867422-us-east-1",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::837672867422:role/cdk-hnb659fds-cfn-exec-role-837672867422-us-east-1",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-837672867422-us-east-1/dc02828f3018fc6e61c9d619ea675c88f4750018a4c7c655b8d3c62ffd177706.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "user-platform-pipeline.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::837672867422:role/cdk-hnb659fds-lookup-role-837672867422-us-east-1",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "user-platform-pipeline.assets"
+      ],
+      "metadata": {
+        "/user-platform-pipeline": [
+          {
+            "type": "aws:cdk:stack-tags",
+            "data": [
+              {
+                "Key": "AppOwner",
+                "Value": "platform-team"
+              },
+              {
+                "Key": "Environment",
+                "Value": "staging"
+              },
+              {
+                "Key": "Project",
+                "Value": "user-platform"
+              }
+            ]
+          }
+        ],
+        "/user-platform-pipeline/ArtifactBucket/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ArtifactBucket7410C9EF"
+          }
+        ],
+        "/user-platform-pipeline/ArtifactBucket/Policy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ArtifactBucketPolicy4B4B7752"
+          }
+        ],
+        "/user-platform-pipeline/ArtifactBucket/AutoDeleteObjectsCustomResource/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ArtifactBucketAutoDeleteObjectsCustomResource0BB47FD6"
+          }
+        ],
+        "/user-platform-pipeline/Custom::S3AutoDeleteObjectsCustomResourceProvider": [
+          {
+            "type": "aws:cdk:is-custom-resource-handler-customResourceProvider",
+            "data": true
+          }
+        ],
+        "/user-platform-pipeline/Custom::S3AutoDeleteObjectsCustomResourceProvider/Role": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092"
+          }
+        ],
+        "/user-platform-pipeline/Custom::S3AutoDeleteObjectsCustomResourceProvider/Handler": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomS3AutoDeleteObjectsCustomResourceProviderHandler9D90184F"
+          }
+        ],
+        "/user-platform-pipeline/BuildProject/Role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BuildProjectRoleAA92C755"
+          }
+        ],
+        "/user-platform-pipeline/BuildProject/Role/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BuildProjectRoleDefaultPolicy3E9F248C"
+          }
+        ],
+        "/user-platform-pipeline/BuildProject/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BuildProject097C5DB7"
+          }
+        ],
+        "/user-platform-pipeline/CodePipeline": [
+          {
+            "type": "aws:cdk:warning",
+            "data": "V1 pipeline type is implicitly selected when `pipelineType` is not set. If you want to use V2 type, set `PipelineType.V2`. [ack: @aws-cdk/aws-codepipeline:unspecifiedPipelineType]",
+            "trace": [
+              "Annotations.addMessage (C:\\Users\\Kaleb\\AppData\\Local\\Temp\\jsii-kernel-dxwa2J\\node_modules\\aws-cdk-lib\\core\\lib\\annotations.js:1:1608)",
+              "Annotations.addWarningV2 (C:\\Users\\Kaleb\\AppData\\Local\\Temp\\jsii-kernel-dxwa2J\\node_modules\\aws-cdk-lib\\core\\lib\\annotations.js:1:825)",
+              "new Pipeline (C:\\Users\\Kaleb\\AppData\\Local\\Temp\\jsii-kernel-dxwa2J\\node_modules\\aws-cdk-lib\\aws-codepipeline\\lib\\pipeline.js:1:8002)",
+              "Kernel._Kernel_create (C:\\Users\\Kaleb\\AppData\\Local\\Temp\\jsii-runtime.3100299620\\lib\\program.js:548:25)",
+              "Kernel.create (C:\\Users\\Kaleb\\AppData\\Local\\Temp\\jsii-runtime.3100299620\\lib\\program.js:218:93)",
+              "KernelHost.processRequest (C:\\Users\\Kaleb\\AppData\\Local\\Temp\\jsii-runtime.3100299620\\lib\\program.js:15471:36)",
+              "KernelHost.run (C:\\Users\\Kaleb\\AppData\\Local\\Temp\\jsii-runtime.3100299620\\lib\\program.js:15431:22)",
+              "Immediate._onImmediate (C:\\Users\\Kaleb\\AppData\\Local\\Temp\\jsii-runtime.3100299620\\lib\\program.js:15432:46)",
+              "process.processImmediate (node:internal/timers:491:21)"
+            ]
+          }
+        ],
+        "/user-platform-pipeline/CodePipeline/Role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CodePipelineRoleB3A660B4"
+          }
+        ],
+        "/user-platform-pipeline/CodePipeline/Role/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CodePipelineRoleDefaultPolicy8D520A8D"
+          }
+        ],
+        "/user-platform-pipeline/CodePipeline/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CodePipelineB74E5936"
+          }
+        ],
+        "/user-platform-pipeline/CodePipeline/Source/GitHub_Source/WebhookResource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CodePipelineSourceGitHubSourceWebhookResource2C08B384"
+          }
+        ],
+        "/user-platform-pipeline/CodePipeline/BuildAndDeploy/CDK_BuildDeploy/CodePipelineActionRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CodePipelineBuildAndDeployCDKBuildDeployCodePipelineActionRole2F16639F"
+          }
+        ],
+        "/user-platform-pipeline/CodePipeline/BuildAndDeploy/CDK_BuildDeploy/CodePipelineActionRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CodePipelineBuildAndDeployCDKBuildDeployCodePipelineActionRoleDefaultPolicy23EDA0E5"
+          }
+        ],
+        "/user-platform-pipeline/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/user-platform-pipeline/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "user-platform-pipeline"
+    },
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    }
+  }
+}

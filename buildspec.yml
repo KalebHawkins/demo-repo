@@ -22,3 +22,4 @@ phases:
       - go run . synth
       - echo "🚀 Deploying CDK stack"
       - cdk deploy --require-approval never --app "go run ."
+      - echo "Done!"
