@@ -6,6 +6,7 @@ github:
   owner: KalebHawkins
   repo: demo-repo
   branch: main
+  secret: demo-repo-ghtoken
 
 services:
   lambda:

@@ -11,11 +11,14 @@ phases:
 
   build:
     commands:
-      - echo "🔁 Moving into cdk-app directory"
+      - echo "📂 Changing to CDK app directory"
       - cd cdk-app
-      - echo "🧹 Tidy up Go modules"
+      - echo "🕵️ Current directory: $(pwd)"
+      - echo "📁 Contents of ../services:"
+      - ls -la ../services
+      - echo "📦 Tidying Go modules"
       - go mod tidy
-      - echo "📦 Synthesizing CDK app"
+      - echo "🧪 Synthesizing CDK app"
       - go run . synth
       - echo "🚀 Deploying CDK stack"
-      - cdk deploy --require-approval never --app "go run ."
+      - cdk deploy --require-approval never --app "go run main.go"

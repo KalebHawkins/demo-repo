@@ -36,7 +36,7 @@ func NewLambdaStack(scope constructs.Construct, id string, props *awscdk.StackPr
 		FunctionName: jsii.String("processUsers"),
 		Runtime:      resolveRuntime("python3.11"),
 		Handler:      jsii.String("handler.lambda_handler"),
-		Code:         awslambda.Code_FromAsset(jsii.String("./services/processUsers"), nil),
+		Code:         awslambda.Code_FromAsset(jsii.String("../services/processUsers"), nil),
 		MemorySize:   jsii.Number(256),
 		Timeout:      awscdk.Duration_Seconds(jsii.Number(10)),
 		Environment: &map[string]*string{
@@ -47,7 +47,7 @@ func NewLambdaStack(scope constructs.Construct, id string, props *awscdk.StackPr
 		FunctionName: jsii.String("notifyAdmins"),
 		Runtime:      resolveRuntime("python3.9"),
 		Handler:      jsii.String("handler.lambda_handler"),
-		Code:         awslambda.Code_FromAsset(jsii.String("./services/notifyAdmins"), nil),
+		Code:         awslambda.Code_FromAsset(jsii.String("../services/notifyAdmins"), nil),
 		MemorySize:   jsii.Number(128),
 		Timeout:      awscdk.Duration_Seconds(jsii.Number(5)),
 	})
