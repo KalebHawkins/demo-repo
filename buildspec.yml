@@ -16,6 +16,6 @@ phases:
       - echo "🧹 Tidy up Go modules"
       - go mod tidy
       - echo "📦 Synthesizing CDK app"
-      - go run main.go synth
+      - go run . synth
       - echo "🚀 Deploying CDK stack"
       - cdk deploy --require-approval never --app "go run ."
