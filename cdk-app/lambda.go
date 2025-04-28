@@ -11,7 +11,7 @@ import (
 func applyGeneratedTags(stack awscdk.Stack) {
 	awscdk.Tags_Of(stack).Add(jsii.String("AppOwner"), jsii.String("platform-team"), nil)
 	awscdk.Tags_Of(stack).Add(jsii.String("Environment"), jsii.String("staging"), nil)
-	awscdk.Tags_Of(stack).Add(jsii.String("Project"), jsii.String("user-platform"), nil)
+	awscdk.Tags_Of(stack).Add(jsii.String("Project"), jsii.String("project-abc"), nil)
 }
 
 func resolveRuntime(runtime string) awslambda.Runtime {

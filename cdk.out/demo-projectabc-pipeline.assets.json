@@ -1,0 +1,36 @@
+{
+  "version": "41.0.0",
+  "files": {
+    "faa95a81ae7d7373f3e1f242268f904eb748d8d0fdd306e8a6fe515a1905a7d6": {
+      "displayName": "demo-projectabc-pipeline/Custom::S3AutoDeleteObjectsCustomResourceProvider Code",
+      "source": {
+        "path": "asset.faa95a81ae7d7373f3e1f242268f904eb748d8d0fdd306e8a6fe515a1905a7d6",
+        "packaging": "zip"
+      },
+      "destinations": {
+        "837672867422-us-east-1": {
+          "bucketName": "cdk-hnb659fds-assets-837672867422-us-east-1",
+          "objectKey": "faa95a81ae7d7373f3e1f242268f904eb748d8d0fdd306e8a6fe515a1905a7d6.zip",
+          "region": "us-east-1",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::837672867422:role/cdk-hnb659fds-file-publishing-role-837672867422-us-east-1"
+        }
+      }
+    },
+    "1190c12ff7172614c977a5050dcbad4a8983e39e97656e27969fbc56cab6884d": {
+      "displayName": "demo-projectabc-pipeline Template",
+      "source": {
+        "path": "demo-projectabc-pipeline.template.json",
+        "packaging": "file"
+      },
+      "destinations": {
+        "837672867422-us-east-1": {
+          "bucketName": "cdk-hnb659fds-assets-837672867422-us-east-1",
+          "objectKey": "1190c12ff7172614c977a5050dcbad4a8983e39e97656e27969fbc56cab6884d.json",
+          "region": "us-east-1",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::837672867422:role/cdk-hnb659fds-file-publishing-role-837672867422-us-east-1"
+        }
+      }
+    }
+  },
+  "dockerImages": {}
+}
