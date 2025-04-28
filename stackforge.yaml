@@ -14,7 +14,8 @@ services:
       runtime: python3.11
       handler: handler.lambda_handler
       memory: 256
-      timeout: 10
+      # timeout: 10 <- Old Value 
+      timeout: 30 # <- New Value
       environment:
         STAGE: staging
 

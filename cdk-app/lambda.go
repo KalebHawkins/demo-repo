@@ -38,7 +38,7 @@ func NewLambdaStack(scope constructs.Construct, id string, props *awscdk.StackPr
 		Handler:      jsii.String("handler.lambda_handler"),
 		Code:         awslambda.Code_FromAsset(jsii.String("../services/processUsers"), nil),
 		MemorySize:   jsii.Number(256),
-		Timeout:      awscdk.Duration_Seconds(jsii.Number(10)),
+		Timeout:      awscdk.Duration_Seconds(jsii.Number(30)),
 		Environment: &map[string]*string{
 			"STAGE": jsii.String("staging"),
 		},
