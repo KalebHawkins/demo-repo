@@ -25,6 +25,6 @@ services:
       timeout: 5
 
 tags:
-  Project: user-platform
+  Project: project-abc
   AppOwner: platform-team
   Environment: staging
