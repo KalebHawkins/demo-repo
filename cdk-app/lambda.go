@@ -48,8 +48,8 @@ func NewLambdaStack(scope constructs.Construct, id string, props *awscdk.StackPr
 		Runtime:      resolveRuntime("python3.9"),
 		Handler:      jsii.String("handler.lambda_handler"),
 		Code:         awslambda.Code_FromAsset(jsii.String("../services/notifyAdmins"), nil),
-		MemorySize:   jsii.Number(128),
-		Timeout:      awscdk.Duration_Seconds(jsii.Number(5)),
+		MemorySize:   jsii.Number(512),
+		Timeout:      awscdk.Duration_Seconds(jsii.Number(15)),
 	})
 
 	return stack

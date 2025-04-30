@@ -1,9 +1,11 @@
 module cdk-app
 
-go 1.24.2
+go 1.23.0
+
+toolchain go1.23.8
 
 require (
-	github.com/aws/aws-cdk-go/awscdk/v2 v2.192.0
+	github.com/aws/aws-cdk-go/awscdk/v2 v2.193.0
 	github.com/aws/constructs-go/constructs/v10 v10.4.2
 	github.com/aws/jsii-runtime-go v1.111.0
 )
